@@ -72,7 +72,7 @@ public class Add {
 
   public double getMedianOfEvenIndex(List<Integer> arrayList) {
     List<Integer> eventIndexList = new ArrayList<>();
-    for (int i = 1; i <= arrayList.size() / 2+1; i=i+2) {
+    for (int i = 1; i <= arrayList.size() / 2 + 1; i = i + 2) {
       eventIndexList.add(arrayList.get(i));
     }
 
@@ -80,13 +80,23 @@ public class Add {
       return eventIndexList.get(eventIndexList.size() / 2);
     } else {
       return
-          (double) (eventIndexList.get(eventIndexList.size() / 2) + eventIndexList.get(eventIndexList.size() / 2 - 1))
+          (double) (eventIndexList.get(eventIndexList.size() / 2) + eventIndexList
+              .get(eventIndexList.size() / 2 - 1))
               / 2;
     }
   }
 
   public double getAverageOfEvenIndex(List<Integer> arrayList) {
-    throw new NotImplementedException();
+    List<Integer> eventIndexList = new ArrayList<>();
+    for (int i = 1; i <= arrayList.size() / 2 + 1; i = i + 2) {
+      eventIndexList.add(arrayList.get(i));
+    }
+
+    double average = 0.0;
+    for (int i : eventIndexList) {
+      average += i;
+    }
+    return average / eventIndexList.size();
   }
 
   public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {

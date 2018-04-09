@@ -22,7 +22,10 @@ public class Reduce {
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        double average=0.0;
+        for(int i:arrayList)
+            average+=i;
+        return average/arrayList.size();
     }
 
     public double getOrderedMedian() {

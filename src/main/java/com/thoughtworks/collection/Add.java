@@ -71,7 +71,18 @@ public class Add {
   }
 
   public double getMedianOfEvenIndex(List<Integer> arrayList) {
-    throw new NotImplementedException();
+    List<Integer> eventIndexList = new ArrayList<>();
+    for (int i = 1; i <= arrayList.size() / 2+1; i=i+2) {
+      eventIndexList.add(arrayList.get(i));
+    }
+
+    if (eventIndexList.size() % 2 == 1) {
+      return eventIndexList.get(eventIndexList.size() / 2);
+    } else {
+      return
+          (double) (eventIndexList.get(eventIndexList.size() / 2) + eventIndexList.get(eventIndexList.size() / 2 - 1))
+              / 2;
+    }
   }
 
   public double getAverageOfEvenIndex(List<Integer> arrayList) {

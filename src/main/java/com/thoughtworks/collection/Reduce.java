@@ -29,7 +29,14 @@ public class Reduce {
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        if (arrayList.size() % 2 == 1) {
+            return arrayList.get(arrayList.size() / 2);
+        } else {
+            return
+                (double) (arrayList.get(arrayList.size() / 2) + arrayList
+                    .get(arrayList.size() / 2 - 1))
+                    / 2;
+        }
     }
 
     public int getFirstEven() {

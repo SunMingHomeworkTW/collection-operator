@@ -1,6 +1,7 @@
 package com.thoughtworks.collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
@@ -46,7 +47,9 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        List<Integer> sortedFromBigList=new ArrayList<>(array);
+        Collections.sort(sortedFromBigList,Collections.reverseOrder());
+        return sortedFromBigList;
     }
 
     public List<Integer> sortFromSmall() {

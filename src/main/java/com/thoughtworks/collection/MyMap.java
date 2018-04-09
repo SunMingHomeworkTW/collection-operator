@@ -32,7 +32,17 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        List<String> mapLettersList=new ArrayList<>();
+        for(int i:array){
+            String str= letterList.get((i+25)%26);
+            while (i>26){
+                i=(i-1)/26;
+                str+=letterList.get((i+25)%26);
+            }
+            str=new StringBuilder(str).reverse().toString();
+            mapLettersList.add(str);
+        }
+        return mapLettersList;
     }
 
     public List<Integer> sortFromBig() {

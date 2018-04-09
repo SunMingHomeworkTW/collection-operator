@@ -52,14 +52,26 @@ public class CollectionOperator {
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
         List<Integer> commonElementList=new ArrayList<>();
+
+        Arrays.sort(secondArray);
         for(int i:firstArray){
-            if(Arrays.binarySearch(secondArray,0,secondArray.length-1,i)>=0)
+            if(Arrays.binarySearch(secondArray,i)>=0)
                 commonElementList.add(i);
         }
         return commonElementList;
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> allElementList=new ArrayList<>();
+        for(int i:firstArray){
+            allElementList.add(i);
+        }
+
+        Arrays.sort(firstArray);
+        for(int i:secondArray){
+            if(Arrays.binarySearch(firstArray,i)<0)
+                allElementList.add(i);
+        }
+        return allElementList;
     }
 }

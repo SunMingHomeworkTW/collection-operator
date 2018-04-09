@@ -1,6 +1,9 @@
 package com.thoughtworks.collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -37,6 +40,8 @@ public class Filter {
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        Set<Integer> differentSet=new HashSet<>(array);
+        List<Integer> differentElementList=new ArrayList<>(differentSet);
+        return differentElementList;
     }
 }

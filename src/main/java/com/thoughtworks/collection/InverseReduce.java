@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import java.util.ArrayList;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -16,6 +17,12 @@ public class InverseReduce {
     }
 
     public List<Integer> divideToSmaller(int number) {
-        throw new NotImplementedException();
+        List<Integer> dividedList=new ArrayList<>();
+        number-=2;
+        while (number>=0){
+            dividedList.add(number);
+            number-=2;
+        }
+        return dividedList;
     }
 }

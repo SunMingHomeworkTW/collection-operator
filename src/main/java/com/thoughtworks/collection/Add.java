@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import java.util.ArrayList;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -90,6 +91,10 @@ public class Add {
   }
 
   public List<Integer> getProcessedList(List<Integer> arrayList) {
-    throw new NotImplementedException();
+    List<Integer> resultList = new ArrayList<>();
+    for (int i = 0; i < arrayList.size() - 1; i++) {
+      resultList.add((arrayList.get(i) + arrayList.get(i + 1)) * 3);
+    }
+    return resultList;
   }
 }

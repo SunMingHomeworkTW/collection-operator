@@ -45,13 +45,18 @@ public class Add {
   public int getSumTripleAndAddTwo(List<Integer> arrayList) {
     int sumTripleAndAddTwo = 0;
     for (int i : arrayList) {
-      sumTripleAndAddTwo += i*3+2;
+      sumTripleAndAddTwo += i * 3 + 2;
     }
     return sumTripleAndAddTwo;
   }
 
   public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-    throw new NotImplementedException();
+    for (int i = 0; i < arrayList.size(); i++) {
+      if (arrayList.get(i) % 2 == 1) {
+        arrayList.set(i, arrayList.get(i) * 3 + 2);
+      }
+    }
+    return arrayList;
   }
 
   public int getSumOfProcessedOdds(List<Integer> arrayList) {

@@ -1,6 +1,8 @@
 package com.thoughtworks.collection;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -71,51 +73,58 @@ public class Add {
   }
 
   public double getMedianOfEvenIndex(List<Integer> arrayList) {
-    List<Integer> eventIndexList = new ArrayList<>();
+    List<Integer> evenIndexList = new ArrayList<>();
     for (int i : arrayList) {
       if (i % 2 == 0) {
-        eventIndexList.add(i);
+        evenIndexList.add(i);
       }
     }
 
-    if (eventIndexList.size() % 2 == 1) {
-      return eventIndexList.get(eventIndexList.size() / 2);
+    if (evenIndexList.size() % 2 == 1) {
+      return evenIndexList.get(evenIndexList.size() / 2);
     } else {
       return
-          (double) (eventIndexList.get(eventIndexList.size() / 2) + eventIndexList
-              .get(eventIndexList.size() / 2 - 1))
+          (double) (evenIndexList.get(evenIndexList.size() / 2) + evenIndexList
+              .get(evenIndexList.size() / 2 - 1))
               / 2;
     }
   }
 
   public double getAverageOfEvenIndex(List<Integer> arrayList) {
-    List<Integer> eventIndexList = new ArrayList<>();
+    List<Integer> evenIndexList = new ArrayList<>();
     for (int i : arrayList) {
       if (i % 2 == 0) {
-        eventIndexList.add(i);
+        evenIndexList.add(i);
       }
     }
 
     double average = 0.0;
-    for (int i : eventIndexList) {
+    for (int i : evenIndexList) {
       average += i;
     }
-    return average / eventIndexList.size();
+    return average / evenIndexList.size();
   }
 
   public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-    List<Integer> eventIndexList = new ArrayList<>();
+    List<Integer> evenIndexList = new ArrayList<>();
     for (int i : arrayList) {
       if (i % 2 == 0) {
-        eventIndexList.add(i);
+        evenIndexList.add(i);
       }
     }
 
-    return eventIndexList.contains(specialElment);
+    return evenIndexList.contains(specialElment);
   }
 
   public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-    throw new NotImplementedException();
+    List<Integer> evenIndexList = new ArrayList<>();
+    for (int i : arrayList) {
+      if (i % 2 == 0) {
+        evenIndexList.add(i);
+      }
+    }
+    Set<Integer> enenSet = new HashSet<>(evenIndexList);
+    return new ArrayList<>(enenSet);
   }
 
   public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {

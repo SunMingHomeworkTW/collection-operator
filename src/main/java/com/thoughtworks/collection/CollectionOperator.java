@@ -1,6 +1,7 @@
 package com.thoughtworks.collection;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
@@ -50,7 +51,12 @@ public class CollectionOperator {
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> commonElementList=new ArrayList<>();
+        for(int i:firstArray){
+            if(Arrays.binarySearch(secondArray,0,secondArray.length-1,i)>=0)
+                commonElementList.add(i);
+        }
+        return commonElementList;
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {

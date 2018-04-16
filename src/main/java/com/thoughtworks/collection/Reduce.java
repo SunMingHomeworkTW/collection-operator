@@ -59,29 +59,34 @@ public class Reduce {
   }
 
   public boolean isEqual(List<Integer> arrayList) {
-    if(this.arrayList.size()!=arrayList.size())
+    if (this.arrayList.size() != arrayList.size()) {
       return false;
-    for (int i = 0; i <arrayList.size() ; i++) {
-      if(this.arrayList.get(i)!=arrayList.get(i))
+    }
+    for (int i = 0; i < arrayList.size(); i++) {
+      if (this.arrayList.get(i) != arrayList.get(i)) {
         return false;
+      }
     }
     return true;
   }
 
   //实现接口SingleLink，然后再此函数内使用
   public Double getMedianInLinkList(SingleLink singleLink) {
-    if (singleLink.size() % 2 == 1) {
-      return (double)singleLink.getNode(singleLink.size() / 2);
+    for (int i : arrayList) {
+      singleLink.addTailPointer(i);
+    }
+    if (arrayList.size() % 2 == 1) {
+      return (double)((Integer)singleLink.getNode(arrayList.size()/ 2));
     } else {
       return
-           ((double)singleLink.getNode(singleLink.size() / 2) +(double) singleLink
-              .getNode(singleLink.size() / 2 - 1))
+          (double)((Integer) singleLink.getNode(arrayList.size() / 2) + (Integer) singleLink
+              .getNode(arrayList.size() / 2 + 1))
               / 2;
     }
   }
 
   public int getLastOdd() {
-    for (int i = arrayList.size()-1; i >=0 ; i--) {
+    for (int i = arrayList.size() - 1; i >= 0; i--) {
       if (arrayList.get(i) % 2 == 1) {
         return arrayList.get(i);
       }
@@ -90,7 +95,7 @@ public class Reduce {
   }
 
   public int getIndexOfLastOdd() {
-    for (int i = arrayList.size()-1; i >=0 ; i--) {
+    for (int i = arrayList.size() - 1; i >= 0; i--) {
       if (arrayList.get(i) % 2 == 1) {
         return i;
       }
